@@ -12,6 +12,10 @@
 		0A05878519A5C88C00F5DBF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A05878319A5C88C00F5DBF5 /* Main.storyboard */; };
 		0A05878719A5C88C00F5DBF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A05878619A5C88C00F5DBF5 /* Images.xcassets */; };
 		0A05879319A5C88C00F5DBF5 /* Class_RosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A05879219A5C88C00F5DBF5 /* Class_RosterTests.swift */; };
+		0A05879F19A5C8C100F5DBF5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A05879E19A5C8C100F5DBF5 /* Person.swift */; };
+		0A0587A119A5DB2D00F5DBF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0587A019A5DB2D00F5DBF5 /* DetailViewController.swift */; };
+		0A0587A919A5F3A400F5DBF5 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A0587A819A5F3A400F5DBF5 /* default.png */; };
+		0AD158C719A609A10033BA51 /* AddRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD158C619A609A10033BA51 /* AddRoster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		0A05878C19A5C88C00F5DBF5 /* Class RosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Class RosterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A05879119A5C88C00F5DBF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A05879219A5C88C00F5DBF5 /* Class_RosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class_RosterTests.swift; sourceTree = "<group>"; };
+		0A05879E19A5C8C100F5DBF5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		0A0587A019A5DB2D00F5DBF5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0A0587A819A5F3A400F5DBF5 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		0AD158C619A609A10033BA51 /* AddRoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +83,13 @@
 		0A05877C19A5C88C00F5DBF5 /* Class Roster */ = {
 			isa = PBXGroup;
 			children = (
+				0AD158C619A609A10033BA51 /* AddRoster.swift */,
 				0A05877F19A5C88C00F5DBF5 /* AppDelegate.swift */,
+				0A0587A019A5DB2D00F5DBF5 /* DetailViewController.swift */,
+				0A05879E19A5C8C100F5DBF5 /* Person.swift */,
 				0A05878119A5C88C00F5DBF5 /* ViewController.swift */,
 				0A05878319A5C88C00F5DBF5 /* Main.storyboard */,
+				0A0587A819A5F3A400F5DBF5 /* default.png */,
 				0A05878619A5C88C00F5DBF5 /* Images.xcassets */,
 				0A05877D19A5C88C00F5DBF5 /* Supporting Files */,
 			);
@@ -191,6 +203,7 @@
 			files = (
 				0A05878519A5C88C00F5DBF5 /* Main.storyboard in Resources */,
 				0A05878719A5C88C00F5DBF5 /* Images.xcassets in Resources */,
+				0A0587A919A5F3A400F5DBF5 /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A05879F19A5C8C100F5DBF5 /* Person.swift in Sources */,
 				0A05878219A5C88C00F5DBF5 /* ViewController.swift in Sources */,
 				0A05878019A5C88C00F5DBF5 /* AppDelegate.swift in Sources */,
+				0A0587A119A5DB2D00F5DBF5 /* DetailViewController.swift in Sources */,
+				0AD158C719A609A10033BA51 /* AddRoster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +413,7 @@
 				0A05879819A5C88C00F5DBF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A05879919A5C88C00F5DBF5 /* Build configuration list for PBXNativeTarget "Class RosterTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +422,7 @@
 				0A05879B19A5C88C00F5DBF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
