@@ -1,5 +1,5 @@
 //
-//  AddRoster.swift
+//  AddViewController.swift
 //  Class Roster Part 5
 //
 //  Created by Kevin Pham on 8/21/14.
@@ -8,15 +8,19 @@
 
 import UIKit
 
-class AddRoster: UIViewController, UINavigationControllerDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var imageView: UIImageView!
-    
+    var addPerson : Person?
     var defaultProfileImage = UIImage(named: "default")
+    
+    @IBOutlet weak var firstNameTxtField: UITextField!
+    @IBOutlet weak var lastNameTxtField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.navigationController.delegate = self
+        self.firstNameTxtField.delegate = self
+        self.lastNameTxtField.delegate = self
         
         self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 6 // 2=Circle, 3,4,5=RoundedCorners, 10=
         self.imageView.clipsToBounds = true
@@ -35,6 +39,29 @@ class AddRoster: UIViewController, UINavigationControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func doneButton(sender: UIBarButtonItem) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "doneSegue" {
+            var rootViewController = segue.destinationViewController as ViewController
+            
+            var firstName = self.firstNameTxtField.text
+            var lastName = self.lastNameTxtField.text
+            var newPerson = Person(firstName: firstName as String, lastName: lastName as String)
+            addPerson = newPerson
+            
+            // ** Queue: Append to classRoster based on teacher/student input option controller **
+            rootViewController.classRoster[1].append(addPerson!)
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

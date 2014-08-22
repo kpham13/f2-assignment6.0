@@ -9,14 +9,14 @@
 import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+        
+    var selectedPerson : Person?
+    var defaultProfileImage = UIImage(named: "default")
+
     @IBOutlet weak var fullNameLbl: UILabel!
     @IBOutlet weak var firstNameTxtField: UITextField!
     @IBOutlet weak var lastNameTxtField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-    
-    var selectedPerson : Person?
-    var defaultProfileImage = UIImage(named: "default")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         } else {
             self.imageView.image = defaultProfileImage
         }
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -87,4 +88,5 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     // Pass the selected object to the new view controller.
     }
     */
+    
 }

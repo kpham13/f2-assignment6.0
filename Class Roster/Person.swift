@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Person {
+class Person: NSObject, NSCoding {
     
     var firstName : String
     var lastName : String
@@ -24,5 +24,16 @@ class Person {
         return firstName + " " + lastName
     }
     
+    // ** NSKeyedArchiver **
+    required init(coder aDecoder: NSCoder!) {
+        self.firstName  = aDecoder.decodeObjectForKey("firstName") as String
+        self.lastName   = aDecoder.decodeObjectForKey("lastName") as String
+    }
+    
+    // ** NSKeyedArchiver **
+    func encodeWithCoder(aCoder: NSCoder!) {
+        aCoder.encodeObject(firstName, forKey: "firstName")
+        aCoder.encodeObject(lastName, forKey: "lastName")
+    }
     
 }

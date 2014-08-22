@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1252" y="381"/>
         </scene>
-        <!--Add Roster-->
+        <!--Add View Controller-->
         <scene sceneID="7fT-UP-Nh1">
             <objects>
-                <viewController id="Tip-OB-pQr" customClass="AddRoster" customModule="Class_Roster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tip-OB-pQr" customClass="AddViewController" customModule="Class_Roster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0gB-ZC-ZM0"/>
                         <viewControllerLayoutGuide type="bottom" id="Vow-Qp-DdF"/>
@@ -99,10 +99,14 @@
                                     <navigationItem title="Add to Roster" id="Wbh-LY-MfO">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fm2-G4-CVS">
                                             <connections>
-                                                <segue destination="8tD-yr-aQL" kind="unwind" unwindAction="cancelButton:" id="WF7-4W-eci"/>
+                                                <segue destination="8tD-yr-aQL" kind="unwind" identifier="cancelSegue" unwindAction="cancelButton:" id="WF7-4W-eci"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="IiM-LD-xJx"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="IiM-LD-xJx">
+                                            <connections>
+                                                <segue destination="8tD-yr-aQL" kind="unwind" identifier="doneSegue" unwindAction="unwindFromAddRoster:" id="YS8-dY-DSV"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <variation key="default">
@@ -240,7 +244,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="firstNameTxtField" destination="AIZ-6b-V5L" id="IuY-gf-94m"/>
                         <outlet property="imageView" destination="Ep5-fL-MlZ" id="f5k-a5-Sx7"/>
+                        <outlet property="lastNameTxtField" destination="qCD-Av-qDV" id="qQE-9Q-mhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b7-Yj-YuD" userLabel="First Responder" sceneMemberID="firstResponder"/>

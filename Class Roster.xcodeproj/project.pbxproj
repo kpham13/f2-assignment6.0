@@ -15,7 +15,8 @@
 		0A05879F19A5C8C100F5DBF5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A05879E19A5C8C100F5DBF5 /* Person.swift */; };
 		0A0587A119A5DB2D00F5DBF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0587A019A5DB2D00F5DBF5 /* DetailViewController.swift */; };
 		0A0587A919A5F3A400F5DBF5 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A0587A819A5F3A400F5DBF5 /* default.png */; };
-		0AD158C719A609A10033BA51 /* AddRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD158C619A609A10033BA51 /* AddRoster.swift */; };
+		0A0598C719A6C78A00E9D0AC /* Roster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A0598C619A6C78A00E9D0AC /* Roster.plist */; };
+		0AD158C719A609A10033BA51 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD158C619A609A10033BA51 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,8 @@
 		0A05879E19A5C8C100F5DBF5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0A0587A019A5DB2D00F5DBF5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0A0587A819A5F3A400F5DBF5 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
-		0AD158C619A609A10033BA51 /* AddRoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoster.swift; sourceTree = "<group>"; };
+		0A0598C619A6C78A00E9D0AC /* Roster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Roster.plist; sourceTree = "<group>"; };
+		0AD158C619A609A10033BA51 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +85,13 @@
 		0A05877C19A5C88C00F5DBF5 /* Class Roster */ = {
 			isa = PBXGroup;
 			children = (
-				0AD158C619A609A10033BA51 /* AddRoster.swift */,
+				0AD158C619A609A10033BA51 /* AddViewController.swift */,
 				0A05877F19A5C88C00F5DBF5 /* AppDelegate.swift */,
 				0A0587A019A5DB2D00F5DBF5 /* DetailViewController.swift */,
 				0A05879E19A5C8C100F5DBF5 /* Person.swift */,
 				0A05878119A5C88C00F5DBF5 /* ViewController.swift */,
 				0A05878319A5C88C00F5DBF5 /* Main.storyboard */,
+				0A0598C619A6C78A00E9D0AC /* Roster.plist */,
 				0A0587A819A5F3A400F5DBF5 /* default.png */,
 				0A05878619A5C88C00F5DBF5 /* Images.xcassets */,
 				0A05877D19A5C88C00F5DBF5 /* Supporting Files */,
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A05878519A5C88C00F5DBF5 /* Main.storyboard in Resources */,
+				0A0598C719A6C78A00E9D0AC /* Roster.plist in Resources */,
 				0A05878719A5C88C00F5DBF5 /* Images.xcassets in Resources */,
 				0A0587A919A5F3A400F5DBF5 /* default.png in Resources */,
 			);
@@ -225,7 +229,7 @@
 				0A05878219A5C88C00F5DBF5 /* ViewController.swift in Sources */,
 				0A05878019A5C88C00F5DBF5 /* AppDelegate.swift in Sources */,
 				0A0587A119A5DB2D00F5DBF5 /* DetailViewController.swift in Sources */,
-				0AD158C719A609A10033BA51 /* AddRoster.swift in Sources */,
+				0AD158C719A609A10033BA51 /* AddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
