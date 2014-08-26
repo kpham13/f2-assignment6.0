@@ -44,9 +44,10 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func doneButton(sender: UIBarButtonItem) {
-        
-    }
+    // ** Queue: Error control? Check to see if values are inputed in text fields. **
+    // @IBAction func doneButton(sender: UIBarButtonItem) {
+    //
+    // }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if segue.identifier == "doneSegue" {
@@ -57,7 +58,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             var newPerson = Person(firstName: firstName as String, lastName: lastName as String)
             addPerson = newPerson
             
-            // ** Queue: Append to classRoster based on teacher/student input option controller **
+            // ** Queue: Append to classRoster based on teacher/student input option controller (segmented control/switch?) **
             rootViewController.classRoster[1].append(addPerson!)
         }
         

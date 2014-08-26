@@ -68,6 +68,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    // ** Queue: Maintain photo picker in landscape mode. **
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         var editedImage = info[UIImagePickerControllerEditedImage] as UIImage

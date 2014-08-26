@@ -25,23 +25,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let path = NSBundle.mainBundle().pathForResource("Roster", ofType: "plist")
         let pListArray = NSArray(contentsOfFile: path)
 
-        for arrayIndex in 0...(pListArray.count-1) {
-            let arrayInArray : AnyObject = pListArray.objectAtIndex(arrayIndex)
-            
-            if arrayIndex == 0 {
-                for personIndex in 0...(arrayInArray.count - 1) {
-                    let personObject : AnyObject = arrayInArray.objectAtIndex(personIndex)
-                    var pListPerson = Person(firstName: personObject["firstName"] as String, lastName: personObject["lastName"] as String)
-                    teachers.append(pListPerson)
+        if let savedArray = NSKeyedUnarchiver.unarchiveObjectWithFile(self.pathForPListArchive()) as? NSArray {
+            self.teachers = savedArray.objectAtIndex(0) as [Person]
+            classRoster.append(teachers)
+            self.students = savedArray.objectAtIndex(1) as [Person]
+            classRoster.append(students)
+        } else {
+            for arrayIndex in 0...(pListArray.count-1) {
+                let arrayInArray : AnyObject = pListArray.objectAtIndex(arrayIndex)
+                
+                if arrayIndex == 0 {
+                    for personIndex in 0...(arrayInArray.count - 1) {
+                        let personObject : AnyObject = arrayInArray.objectAtIndex(personIndex)
+                        var pListPerson = Person(firstName: personObject["firstName"] as String, lastName: personObject["lastName"] as String)
+                        teachers.append(pListPerson)
+                    }
+                    classRoster.append(teachers)
+                } else {
+                    for personIndex in 0...(arrayInArray.count - 1) {
+                        let personObject : AnyObject = arrayInArray.objectAtIndex(personIndex)
+                        var pListPerson = Person(firstName: personObject["firstName"] as String, lastName: personObject["lastName"] as String)
+                        students.append(pListPerson)
+                    }
+                    classRoster.append(students)
                 }
-                classRoster.append(teachers)
-            } else {
-                for personIndex in 0...(arrayInArray.count - 1) {
-                    let personObject : AnyObject = arrayInArray.objectAtIndex(personIndex)
-                    var pListPerson = Person(firstName: personObject["firstName"] as String, lastName: personObject["lastName"] as String)
-                    students.append(pListPerson)
-                }
-                classRoster.append(students)
+                
             }
             
         }
@@ -50,6 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(animated: Bool) {
         // super.viewWillAppear(true)
+        self.saveData()
         self.tableView.reloadData()
     }
 
@@ -62,7 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return self.classRoster.count
     }
     
-    // ** Queue: Update this to retrieve Header names from array. **
+    // ** Queue: Update this to retrieve Header names from array? **
     func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
         switch section {
         case 0:
@@ -120,5 +129,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
+    func pathForDocumentDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as [String]
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+
+    func pathForPListArchive() -> String {
+        let documentsDirectory = self.pathForDocumentDirectory()
+        let filePath = documentsDirectory + "/Archive"
+        return filePath
+    }
+    
+    func saveData() {
+        var saveArray = self.classRoster
+        NSKeyedArchiver.archiveRootObject(saveArray, toFile: self.pathForPListArchive())
+    }
+    
 }
 
